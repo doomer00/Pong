@@ -1,19 +1,17 @@
 # Pong Game
 
-This is a simple implementation of the classic game Pong using Python and the Pygame library.
+Pong in Python
 
 ## Introduction
 
 Pong is a two-dimensional sports game that simulates table tennis. The game involves two paddles and a ball, with players competing to score points against each other by hitting the ball past the opponent's paddle.
 
-This project presents a basic version of the Pong game developed in Python using the Pygame library, providing a simple player-versus-player experience and an AI opponent.
-
 ## Features
 
 - Player-versus-player gameplay
-- AI-controlled opponent
-- Simple scoring system
-- Basic game controls
+- The bot will track the ball's y position
+- Diffculties based on bot's paddle speed
+- Press q to quit, r to restart
 
 ## Installation
 
@@ -29,38 +27,21 @@ To run the game locally, follow these steps:
 
 - Launch the game using the installation instructions above.
 - Use the provided controls (listed below) to move the paddles and hit the ball.
-- Play against a friend or challenge the AI opponent.
+- Play against a friend or challenge the bot.
+- Score 10 points to win!!!
 
 ## Controls
 
-Player 1:
+Left:
 - **W**: Move the paddle up
 - **S**: Move the paddle down
 
-Player 2:
+Right:
 - **Up Arrow**: Move the paddle up
 - **Down Arrow**: Move the paddle down
-
-## Gameplay
-
-- The game starts with both players' paddles positioned in the middle of the screen.
-- The objective is to hit the ball past the opponent's paddle to score a point.
-- The first player to reach a set number of points (default: 10) wins the game.
-
-## Enhancements
-
-Possible enhancements to further improve the game include:
-
-- Refining the AI logic for the opponent's paddle movement
-- Adding sound effects and background music
-- Implementing a win screen with options to restart or exit
-- Creating multiple difficulty levels for the AI opponent
-
-## Contributing
-
-Contributions to this project are welcome! Feel free to open issues or pull requests to suggest improvements, report bugs, or add new features.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
 
