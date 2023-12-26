@@ -13,7 +13,7 @@ def simple_ai(paddle, ball, diff):
         paddle.y -= 0.5*diff
     return paddle.y
 
-def main():
+def game():
     #Setup
     
     pyg.init()
@@ -83,6 +83,11 @@ def main():
                 if event.key == pyg.K_q:
                     pyg.quit()
                     sys.exit()
+                elif event.key == pyg.K_r:
+                    scores = [0, 0]
+                    ball_pos.x, ball_pos.y = w/2, rnd.uniform(h/4, 3*h/4)
+                    dx, dy = rnd.uniform(-1, 1), rnd.uniform(-1, 1)
+                    continue
                 
         screen.fill("black")
 
@@ -141,10 +146,9 @@ def main():
         ball_pos.x += dx * ball_speed
         ball_pos.y += dy * ball_speed
 
-        pyg.display.flip()
-
+        pyg.display.flip() 
+    
     pyg.quit()
-
 
 if __name__ == "__main__":
     main()
