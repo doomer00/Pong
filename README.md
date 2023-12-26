@@ -40,6 +40,10 @@ Right:
 - **Up Arrow**: Move the paddle up
 - **Down Arrow**: Move the paddle down
 
+Press:
+- **Q**: To quit
+- **R**: To Restart
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
