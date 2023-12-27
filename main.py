@@ -3,19 +3,25 @@ import pygame as pyg
 import random as rnd
 import sys
 
+#Globals
 w, h = 858, 525
 pad_w, pad_l = 15, 75
+pad_speed = 0.5
 
-def simple_ai(paddle, ball, diff):
-    if paddle.y + pad_l / 2 < ball.y:
-        paddle.y += 0.5*diff
-    elif paddle.y + pad_l / 2 > ball.y:
-        paddle.y -= 0.5*diff
-    return paddle.y
-
-def game():
-    #Setup
+def game_bot(paddle, ball, diff):
     
+    speed = 0
+
+    if paddle.y + pad_l / 2 < ball.y:
+        speed = pad_speed * diff
+    elif paddle.y + pad_l / 2 > ball.y:
+        speed = -pad_speed * diff
+    
+    return speed
+
+def main():
+
+    #Setup    
     pyg.init()
     screen = pyg.display.set_mode((w, h))
 
@@ -78,7 +84,6 @@ def game():
            
             if event.type == pyg.QUIT:
                 run = 0
-
             elif event.type == pyg.KEYDOWN:
                 if event.key == pyg.K_q:
                     pyg.quit()
@@ -87,6 +92,7 @@ def game():
                     scores = [0, 0]
                     ball_pos.x, ball_pos.y = w/2, rnd.uniform(h/4, 3*h/4)
                     dx, dy = rnd.uniform(-1, 1), rnd.uniform(-1, 1)
+                    pad1_pos.y, pad2_pos.y = h/2, h/2
                     continue
                 
         screen.fill("black")
@@ -115,19 +121,20 @@ def game():
         if ball_pos.x >= w:
             scores[0] += 1
             ball_pos.x, ball_pos.y = w/2, rnd.uniform(h/4, 3*h/4)
-            dx, dy = 1, rnd.uniform(-1, 1)
+            dx, dy = rnd.uniform(-1, 1), rnd.uniform(-1, 1)
             ball_speed = 1/2
             continue
         
         elif ball_pos.x <= 0:
             scores[1] += 1
             ball_pos.x, ball_pos.y = w/2, rnd.uniform(h/4, 3*h/4)
-            dx, dy = -1, rnd.uniform(-1, 1)
+            dx, dy = rnd.uniform(-1, 1), rnd.uniform(-1, 1)
             ball_speed = 1/2
             continue 
         
-        pad1_pos.y = simple_ai(pad1_pos, ball_pos, 1)
-        pad2_pos.y = simple_ai(pad2_pos, ball_pos, 1/2)
+        #pad1_pos.y = simple_ai(pad1_pos, ball_pos, 1)
+        if pad2_pos.y +     
+        pad2_pos.y += game_bot(pad2_pos, ball_pos, 1/2)
 
         #When the ball hits the pads
         if ball_pos.x <= pad1_pos.x + pad_w:
