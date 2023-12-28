@@ -11,7 +11,6 @@ Pong is a two-dimensional sports game that simulates table tennis. The game invo
 - Player-versus-player gameplay
 - The bot will track the ball's y position
 - Diffculties based on bot's paddle speed
-- Press q to quit, r to restart
 
 ## Installation
 
@@ -43,6 +42,7 @@ Right:
 Press:
 - **Q**: To quit
 - **R**: To Restart
+- **P**: To pause/ start
 
 ## License
 
